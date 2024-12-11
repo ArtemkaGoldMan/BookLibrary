@@ -24,6 +24,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = new string('A', 101), // Exceeds max length of 100
@@ -34,6 +35,7 @@ namespace ServerLibrary.Test.Services
 
             // Act
             Action act = () => context.Books.Add(book);
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -47,6 +49,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = " ", // Invalid: Whitespace only
@@ -57,6 +60,7 @@ namespace ServerLibrary.Test.Services
 
             // Act
             Action act = () => context.Books.Add(book);
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -68,6 +72,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = "Valid Title",
@@ -82,6 +87,7 @@ namespace ServerLibrary.Test.Services
                 context.Books.Add(book);
                 context.SaveChanges();
             };
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -94,6 +100,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = "Valid Title",
@@ -108,6 +115,7 @@ namespace ServerLibrary.Test.Services
                 context.Books.Add(book);
                 context.SaveChanges(); // This triggers the database update and validation
             };
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>();
@@ -118,6 +126,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = "Valid Title",
@@ -132,6 +141,7 @@ namespace ServerLibrary.Test.Services
                 context.Books.Add(book);
                 context.SaveChanges();
             };
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -143,6 +153,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = "Valid Title",
@@ -152,7 +163,12 @@ namespace ServerLibrary.Test.Services
             };
 
             // Act
-            Action act = () => context.Books.Add(book);
+            Action act = () =>
+            {
+                context.Books.Add(book);
+                context.SaveChanges();
+            };
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -164,6 +180,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book
             {
                 Title = "Valid Title",
@@ -173,7 +190,12 @@ namespace ServerLibrary.Test.Services
             };
 
             // Act
-            Action act = () => context.Books.Add(book);
+            Action act = () =>
+            {
+                context.Books.Add(book);
+                context.SaveChanges();
+            };
+            context.ChangeTracker.Clear();
 
             // Assert
             act.Should().Throw<DbUpdateException>()

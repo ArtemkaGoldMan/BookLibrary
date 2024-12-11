@@ -27,17 +27,19 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var service = new BookService(context);
             var book = new Book { Title = "Test Book", Author = "John Doe", PublishedDate = DateTime.Now, Genre = "Fiction" };
 
             // Act
             var createdBook = await service.CreateBookAsync(book);
+            context.ChangeTracker.Clear();
 
             // Assert
             createdBook.Should().NotBeNull();
             createdBook.Title.Should().Be("Test Book");
             createdBook.Id.Should().BeGreaterThan(0);
-            //context.Books.Count().Should().Be(1);
+            context.Books.Count().Should().Be(1);
         }
 
         [Fact]
@@ -47,8 +49,10 @@ namespace ServerLibrary.Test.Services
             var context = GetInMemoryDbContext();
             var service = new BookService(context);
 
+            context.Database.BeginTransaction();
             // Act
             Func<Task> act = async () => await service.CreateBookAsync(null!);
+            context.ChangeTracker.Clear();
 
             // Assert
             await act.Should().ThrowAsync<ArgumentNullException>();
@@ -60,6 +64,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             context.Books.AddRange(
                 new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" },
                 new Book { Title = "Book 2", Author = "Author 2", PublishedDate = DateTime.Now, Genre = "Genre 2" }
@@ -67,13 +72,13 @@ namespace ServerLibrary.Test.Services
             await context.SaveChangesAsync();
 
             var service = new BookService(context);
-
+            context.ChangeTracker.Clear();
             // Act
             var books = await service.GetAllBooksAsync();
 
             // Assert
             books.Should().NotBeNull();
-            //books.Should().HaveCount(2);
+            books.Should().HaveCount(2);
             books.Should().Contain(b => b.Title == "Book 1" && b.Author == "Author 1");
             books.Should().Contain(b => b.Title == "Book 2" && b.Author == "Author 2");
         }
@@ -101,12 +106,14 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             context.Books.AddRange(
                 new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" },
                 new Book { Title = "Book 2", Author = "Author 2", PublishedDate = DateTime.Now, Genre = "Genre 2" },
                 new Book { Title = "Book 3", Author = "Author 3", PublishedDate = DateTime.Now, Genre = "Genre 3" }
             );
             await context.SaveChangesAsync();
+            context.ChangeTracker.Clear();
 
             var service = new BookService(context);
 
@@ -139,10 +146,12 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             context.Books.AddRange(
                 new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" }
             );
             await context.SaveChangesAsync();
+            context.ChangeTracker.Clear();
 
             var service = new BookService(context);
 
@@ -158,11 +167,13 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             context.Books.AddRange(
                 new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" },
                 new Book { Title = "Book 2", Author = "Author 2", PublishedDate = DateTime.Now, Genre = "Genre 2" }
             );
             await context.SaveChangesAsync();
+            context.ChangeTracker.Clear();
 
             var service = new BookService(context);
 
@@ -181,9 +192,11 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" };
             context.Books.Add(book);
             await context.SaveChangesAsync();
+            context.ChangeTracker.Clear();
 
             var service = new BookService(context);
 
@@ -233,9 +246,11 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book { Title = "Old Title", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
             context.Books.Add(book);
             await context.SaveChangesAsync();
+            context.ChangeTracker.Clear();
 
             var service = new BookService(context);
 
@@ -255,6 +270,7 @@ namespace ServerLibrary.Test.Services
         {
             // Arrange
             var context = GetInMemoryDbContext();
+            context.Database.BeginTransaction();
             var book = new Book { Title = "Book to Delete", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
             context.Books.Add(book);
             await context.SaveChangesAsync();
@@ -263,6 +279,7 @@ namespace ServerLibrary.Test.Services
 
             // Act
             var result = await service.DeleteBookAsync(book.Id);
+            context.ChangeTracker.Clear();
 
             // Assert
             result.Should().BeTrue();
