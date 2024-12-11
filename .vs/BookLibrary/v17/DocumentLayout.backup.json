@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|solutionrelative:server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\services\\contracts\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\contracts\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24085F83-569A-4DD6-B450-04E18A37FB43}|BaseLibrary\\BaseLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\baselibrary\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24085F83-569A-4DD6-B450-04E18A37FB43}|BaseLibrary\\BaseLibrary.csproj|solutionrelative:baselibrary\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Server\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:11:14.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Implementations\\BookService.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\BookService.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Implementations\\BookService.cs",
+              "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\BookService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAwwBwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:09:10.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Contracts\\IBookService.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Services\\Contracts\\IBookService.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Contracts\\IBookService.cs",
+              "RelativeToolTip": "ServerLibrary\\Services\\Contracts\\IBookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:08:46.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Program.cs*",
+              "RelativeToolTip": "Server\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:06:00.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\appsettings.json",
+              "RelativeToolTip": "Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-11T14:58:06.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ServerLibrary\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "ServerLibrary\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T14:55:56.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\Entities\\Book.cs",
+              "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Book.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\Entities\\Book.cs",
+              "RelativeToolTip": "BaseLibrary\\Entities\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T14:53:44.231Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

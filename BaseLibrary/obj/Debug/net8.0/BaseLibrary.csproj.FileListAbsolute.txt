@@ -1,0 +1,11 @@
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\bin\Debug\net8.0\BaseLibrary.deps.json
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\bin\Debug\net8.0\BaseLibrary.dll
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\bin\Debug\net8.0\BaseLibrary.pdb
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.AssemblyInfoInputs.cache
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.AssemblyInfo.cs
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.csproj.CoreCompileInputs.cache
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.dll
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\refint\BaseLibrary.dll
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\BaseLibrary.pdb
+C:\Users\artem\source\repos\BookLibrary\BaseLibrary\obj\Debug\net8.0\ref\BaseLibrary.dll
