@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseLibrary", "BaseLibrary\BaseLibrary.csproj", "{24085F83-569A-4DD6-B450-04E18A37FB43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseLibrary", "BaseLibrary\BaseLibrary.csproj", "{24085F83-569A-4DD6-B450-04E18A37FB43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerLibrary", "ServerLibrary\ServerLibrary.csproj", "{656B9356-F8EA-4639-8B02-590048DAD6FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerLibrary", "ServerLibrary\ServerLibrary.csproj", "{656B9356-F8EA-4639-8B02-590048DAD6FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{3095F03E-4679-45C3-B301-A84337FE911E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{3095F03E-4679-45C3-B301-A84337FE911E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerLibrary.Test", "ServerLibrary.Test\ServerLibrary.Test.csproj", "{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{3095F03E-4679-45C3-B301-A84337FE911E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3095F03E-4679-45C3-B301-A84337FE911E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3095F03E-4679-45C3-B301-A84337FE911E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

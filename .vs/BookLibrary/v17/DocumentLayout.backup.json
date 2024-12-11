@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|solutionrelative:server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}|ServerLibrary.Test\\ServerLibrary.Test.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary.test\\services\\bookvalidationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}|ServerLibrary.Test\\ServerLibrary.Test.csproj|solutionrelative:serverlibrary.test\\services\\bookvalidationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}|ServerLibrary.Test\\ServerLibrary.Test.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary.test\\services\\bookservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0A2DDCC-2E61-45E2-8016-39EE83F757AB}|ServerLibrary.Test\\ServerLibrary.Test.csproj|solutionrelative:serverlibrary.test\\services\\bookservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|solutionrelative:server\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\services\\contracts\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\services\\contracts\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656B9356-F8EA-4639-8B02-590048DAD6FD}|ServerLibrary\\ServerLibrary.csproj|solutionrelative:serverlibrary\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3095F03E-4679-45C3-B301-A84337FE911E}|Server\\Server.csproj|c:\\users\\artem\\source\\repos\\booklibrary\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -47,6 +55,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BookValidationTests.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\Services\\BookValidationTests.cs",
+              "RelativeDocumentMoniker": "ServerLibrary.Test\\Services\\BookValidationTests.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\Services\\BookValidationTests.cs",
+              "RelativeToolTip": "ServerLibrary.Test\\Services\\BookValidationTests.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAgwJcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:56:25.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\Services\\BookServiceTests.cs",
+              "RelativeDocumentMoniker": "ServerLibrary.Test\\Services\\BookServiceTests.cs",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\Services\\BookServiceTests.cs",
+              "RelativeToolTip": "ServerLibrary.Test\\Services\\BookServiceTests.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAIwBABAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T15:42:22.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BooksController.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Controllers\\BooksController.cs",
               "RelativeDocumentMoniker": "Server\\Controllers\\BooksController.cs",
@@ -59,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BookService.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Implementations\\BookService.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Services\\Implementations\\BookService.cs",
               "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Implementations\\BookService.cs",
               "RelativeToolTip": "ServerLibrary\\Services\\Implementations\\BookService.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAwwBwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T15:09:10.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IBookService.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Services\\Contracts\\IBookService.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Services\\Contracts\\IBookService.cs",
@@ -85,12 +119,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Program.cs",
               "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Program.cs*",
-              "RelativeToolTip": "Server\\Program.cs*",
+              "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T15:06:00.33Z",
@@ -98,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\appsettings.json",
               "RelativeDocumentMoniker": "Server\\appsettings.json",
@@ -111,20 +145,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "ServerLibrary\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\Data\\AppDbContext.cs",
               "RelativeToolTip": "ServerLibrary\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAxwCUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T14:55:56.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "BaseLibrary\\Entities\\Book.cs",
