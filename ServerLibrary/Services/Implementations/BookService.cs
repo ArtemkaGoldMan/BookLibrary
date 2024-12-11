@@ -49,6 +49,10 @@ namespace ServerLibrary.Services.Implementations
 
         public async Task<Book?> GetBookByIdAsync(int id)
         {
+            if (id < 1)
+            {
+                throw new ArgumentException("Invalid argument: ID must be greater than 0.");
+            }
             try
             {
                 return await _context.Books.FindAsync(id);
@@ -62,6 +66,7 @@ namespace ServerLibrary.Services.Implementations
 
         public async Task<Book> CreateBookAsync(Book book)
         {
+            ArgumentNullException.ThrowIfNull(book);
             try
             {
                 _context.Books.Add(book);

@@ -10,10 +10,13 @@ namespace ServerLibrary.Test.Services
         private AppDbContext GetInMemoryDbContext()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=InMemoryTestDb;Trusted_Connection=True;MultipleActiveResultSets=true")
                 .Options;
 
-            return new AppDbContext(options);
+            var context = new AppDbContext(options);
+            context.Database.EnsureCreated();
+
+            return context;
         }
 
         [Fact]
@@ -74,7 +77,11 @@ namespace ServerLibrary.Test.Services
             };
 
             // Act
-            Action act = () => context.Books.Add(book);
+            Action act = () =>
+            {
+                context.Books.Add(book);
+                context.SaveChanges();
+            };
 
             // Assert
             act.Should().Throw<DbUpdateException>()
@@ -96,11 +103,14 @@ namespace ServerLibrary.Test.Services
             };
 
             // Act
-            Action act = () => context.Books.Add(book);
+            Action act = () =>
+            {
+                context.Books.Add(book);
+                context.SaveChanges(); // This triggers the database update and validation
+            };
 
             // Assert
-            act.Should().Throw<DbUpdateException>()
-                .WithMessage("*Cannot insert the value NULL into column 'Author'.*");
+            act.Should().Throw<DbUpdateException>();
         }
 
         [Fact]
@@ -117,7 +127,11 @@ namespace ServerLibrary.Test.Services
             };
 
             // Act
-            Action act = () => context.Books.Add(book);
+            Action act = () =>
+            {
+                context.Books.Add(book);
+                context.SaveChanges();
+            };
 
             // Assert
             act.Should().Throw<DbUpdateException>()

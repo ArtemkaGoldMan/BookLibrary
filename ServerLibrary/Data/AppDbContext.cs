@@ -32,7 +32,6 @@ namespace ServerLibrary.Data
                 entity.Property(b => b.Genre)
                     .HasMaxLength(50);
 
-
                 entity.Property(b => b.PublishedDate)
                     .IsRequired();
             });

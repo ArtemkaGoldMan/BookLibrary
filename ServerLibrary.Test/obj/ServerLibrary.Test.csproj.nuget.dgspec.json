@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj": {}
+    "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
+    "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj",
         "projectName": "BaseLibrary",
-        "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\obj\\",
+        "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj",
+        "packagesPath": "C:\\Users\\stanislaw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stanislaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -65,24 +66,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj": {
+    "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj",
+        "projectUniqueName": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj",
         "projectName": "ServerLibrary.Test",
-        "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary.Test\\obj\\",
+        "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary.Test\\ServerLibrary.Test.csproj",
+        "packagesPath": "C:\\Users\\stanislaw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stanislaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -98,14 +99,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
               },
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj"
               },
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Server.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Server.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\Server.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\Server.csproj"
               }
             }
           }
@@ -119,7 +120,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -129,29 +131,33 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.8.0, )"
+              "version": "[17.12.0, )"
             },
             "Moq": {
               "target": "Package",
               "version": "[4.20.72, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.2, )"
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.5.3, )"
+              "version": "[2.9.2, )"
             },
             "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.5.3, )"
+              "version": "[2.8.2, )"
             }
           },
           "imports": [
@@ -170,24 +176,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
+    "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj",
         "projectName": "ServerLibrary",
-        "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\obj\\",
+        "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj",
+        "packagesPath": "C:\\Users\\stanislaw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stanislaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -203,8 +209,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
               }
             }
           }
@@ -218,12 +224,17 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -249,24 +260,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Server.csproj": {
+    "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\Server\\obj\\",
+        "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\stanislaw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stanislaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -282,11 +293,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\BaseLibrary\\BaseLibrary.csproj"
               },
-              "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
-                "projectPath": "C:\\Users\\artem\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj"
+              "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj": {
+                "projectPath": "C:\\Users\\stanislaw\\source\\repos\\BookLibrary\\ServerLibrary\\ServerLibrary.csproj"
               }
             }
           }
@@ -300,7 +311,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -318,7 +330,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -340,7 +352,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
