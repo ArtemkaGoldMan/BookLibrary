@@ -2,122 +2,121 @@
 using Microsoft.EntityFrameworkCore;
 using ServerLibrary.Data;
 using ServerLibrary.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace ServerLibrary.Services.Implementations
+namespace ServerLibrary.Services.Implementations;
+
+public class BookService : IBookService
 {
-    public class BookService : IBookService
+    private readonly AppDbContext _context;
+
+    public BookService(AppDbContext context)
     {
-        private readonly AppDbContext _context;
+        _context = context;
+    }
 
-        public BookService(AppDbContext context)
+    public async Task<IEnumerable<Book>> GetAllBooksAsync()
+    {
+        try
         {
-            _context = context;
+            return await _context.Books.ToListAsync();
         }
-
-        public async Task<IEnumerable<Book>> GetAllBooksAsync()
+        catch (Exception ex)
         {
-            try
-            {
-                return await _context.Books.ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(GetAllBooksAsync)}: {ex.Message}");
-                throw;
-            }
+            Console.WriteLine($"Error in {nameof(GetAllBooksAsync)}: {ex.Message}");
+            throw;
         }
+    }
 
-        public async Task<IEnumerable<Book>> GetBooksInRangeAsync(int i, int j)
+    public async Task<IEnumerable<Book>> GetBooksInRangeAsync(int i, int j)
+    {
+        try
         {
-            try
-            {
-                if (i <= 0 || j < i) throw new ArgumentException("Invalid range specified.");
+            if (i <= 0 || j < i) throw new ArgumentException("Invalid range specified.");
 
-                return await _context.Books.Skip(i - 1).Take(j - i + 1).ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(GetBooksInRangeAsync)}: {ex.Message}");
-                throw;
-            }
+            return await _context.Books.Skip(i - 1).Take(j - i + 1).ToListAsync();
         }
-
-        public async Task<Book?> GetBookByIdAsync(int id)
+        catch (Exception ex)
         {
-            if (id < 1)
-            {
-                throw new ArgumentException("Invalid argument: ID must be greater than 0.");
-            }
-            try
-            {
-                return await _context.Books.FindAsync(id);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(GetBookByIdAsync)}: {ex.Message}");
-                throw;
-            }
+            Console.WriteLine($"Error in {nameof(GetBooksInRangeAsync)}: {ex.Message}");
+            throw;
         }
+    }
 
-        public async Task<Book> CreateBookAsync(Book book)
+    public async Task<Book?> GetBookByIdAsync(int id)
+    {
+        if (id < 1)
         {
-            ArgumentNullException.ThrowIfNull(book);
-            try
-            {
-                _context.Books.Add(book);
-                await _context.SaveChangesAsync();
-                return book;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(CreateBookAsync)}: {ex.Message}");
-                throw;
-            }
+            throw new ArgumentException("Invalid argument: ID must be greater than 0.");
         }
-
-        public async Task<Book?> UpdateBookAsync(int id, Book updatedBook)
+        try
         {
-            try
-            {
-                var book = await _context.Books.FindAsync(id);
-                if (book == null) return null;
-
-                book.Title = updatedBook.Title;
-                book.Author = updatedBook.Author;
-                book.Genre = updatedBook.Genre;
-                book.PublishedDate = updatedBook.PublishedDate;
-
-                await _context.SaveChangesAsync();
-                return book;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(UpdateBookAsync)}: {ex.Message}");
-                throw;
-            }
+            return await _context.Books.FindAsync(id);
         }
-
-        public async Task<bool> DeleteBookAsync(int id)
+        catch (Exception ex)
         {
-            try
-            {
-                var book = await _context.Books.FindAsync(id);
-                if (book == null) return false;
+            Console.WriteLine($"Error in {nameof(GetBookByIdAsync)}: {ex.Message}");
+            throw;
+        }
+    }
 
-                _context.Books.Remove(book);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in {nameof(DeleteBookAsync)}: {ex.Message}");
-                throw;
-            }
+    public async Task<Book> CreateBookAsync(Book book)
+    {
+        ArgumentNullException.ThrowIfNull(book);
+
+        var validationContext = new ValidationContext(book);
+        Validator.ValidateObject(book, validationContext, validateAllProperties: true);
+
+        try
+        {
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
+            return book;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in {nameof(CreateBookAsync)}: {ex.Message}");
+            throw;
+        }
+    }
+
+    public async Task<Book?> UpdateBookAsync(int id, Book updatedBook)
+    {
+        try
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null) return null;
+
+            book.Title = updatedBook.Title;
+            book.Author = updatedBook.Author;
+            book.Genre = updatedBook.Genre;
+            book.PublishedDate = updatedBook.PublishedDate;
+
+            await _context.SaveChangesAsync();
+            return book;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in {nameof(UpdateBookAsync)}: {ex.Message}");
+            throw;
+        }
+    }
+
+    public async Task<bool> DeleteBookAsync(int id)
+    {
+        try
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null) return false;
+
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in {nameof(DeleteBookAsync)}: {ex.Message}");
+            throw;
         }
     }
 }

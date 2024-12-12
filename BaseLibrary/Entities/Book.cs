@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BaseLibrary.Validators;
+using System.ComponentModel.DataAnnotations;
 
-namespace BaseLibrary.Entities
+namespace BaseLibrary.Entities;
+
+public class Book
 {
-    public class Book
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public DateTime PublishedDate { get; set; }
-        public string Genre { get; set; }
-    }
+    public int Id { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Title can't be empty or whitespace")]
+    public required string Title { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Author name can't be empty or whitespace")]
+    public required string Author { get; set; }
+
+    [Required]
+    [DateLessThanCurrent(ErrorMessage = "Published date must be less than the current date and time.")]
+    public required DateTime PublishedDate { get; set; }
+
+    [Required]
+    [MaxLength(50)]
+    [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Genre can't be empty or whitespace")]
+    public required string Genre { get; set; }
 }

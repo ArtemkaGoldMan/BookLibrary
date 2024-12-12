@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "API and MVC",
+    "Projects": [
+      {
+        "Path": "Server\\Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WebClient\\WebClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

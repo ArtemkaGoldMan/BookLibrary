@@ -1,5 +1,9 @@
 ﻿@model BaseLibrary.Entities.Book
 
+@{
+    ViewData["Title"] = "Edit";
+}
+
 <h2 class="text-center">Edit Book</h2>
 <form asp-action="Edit" class="w-50 mx-auto">
     <input type="hidden" asp-for="Id" />
