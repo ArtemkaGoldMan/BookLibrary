@@ -268,19 +268,6 @@ public class BookTests : IDisposable
     }
 
     [Fact]
-    public async Task DeleteBook_ShouldReturnFalse_WhenBookDoesNotExist()
-    {
-        // Arrange
-        var service = new BookService(_context);
-
-        // Act
-        var result = await service.DeleteBookAsync(-1);
-
-        // Assert
-        result.Should().BeFalse();
-    }
-
-    [Fact]
     public void Book_Title_ShouldNotExceedMaxLength()
     {
         // Arrange
@@ -438,5 +425,73 @@ public class BookTests : IDisposable
         // Assert
         createdBook.Should().NotBeNull();
         createdBook.PublishedDate.Should().Be(book.PublishedDate);
+    }
+
+    //
+    [Fact]
+    public async Task UpdateBook_ShouldReturnNull_WhenBookDoesNotExist()
+    {
+        // Arrange
+        var service = new BookService(_context);
+        var updatedBook = new Book { Title = "Non-existent Book", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
+
+        // Act
+        var result = await service.UpdateBookAsync(-1, updatedBook);
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        result.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task UpdateBook_ShouldThrowException_WhenUpdatedBookIsNull()
+    {
+        // Arrange
+        var book = new Book { Title = "Original Title", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+        _context.ChangeTracker.Clear();
+
+        var service = new BookService(_context);
+
+        // Act
+        Func<Task> act = async () => await service.UpdateBookAsync(book.Id, null!);
+
+        // Assert
+        await act.Should().ThrowAsync<ArgumentNullException>();
+    }
+
+    [Fact]
+    public async Task UpdateBook_ShouldFail_WhenUpdatedBookHasInvalidData()
+    {
+        // Arrange
+        var book = new Book { Title = "Valid Title", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+        _context.ChangeTracker.Clear();
+
+        var service = new BookService(_context);
+
+        var invalidUpdatedBook = new Book { Title = "", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
+
+        // Act
+        Func<Task> act = async () => await service.UpdateBookAsync(book.Id, invalidUpdatedBook);
+
+        // Assert
+        await act.Should().ThrowAsync<ValidationException>();
+    }
+
+    [Fact]
+    public async Task DeleteBook_ShouldThrowException_WhenIdIsInvalid()
+    {
+        // Arrange
+        var service = new BookService(_context);
+
+        // Act
+        Func<Task> act = async () => await service.DeleteBookAsync(0);
+
+        // Assert
+        await act.Should().ThrowAsync<ArgumentException>()
+            .WithMessage("Invalid argument: ID must be greater than 0.");
     }
 }

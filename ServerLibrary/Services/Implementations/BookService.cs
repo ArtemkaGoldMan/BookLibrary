@@ -82,6 +82,11 @@ public class BookService : IBookService
 
     public async Task<Book?> UpdateBookAsync(int id, Book updatedBook)
     {
+        ArgumentNullException.ThrowIfNull(updatedBook);
+
+        var validationContext = new ValidationContext(updatedBook);
+        Validator.ValidateObject(updatedBook, validationContext, validateAllProperties: true);
+
         try
         {
             var book = await _context.Books.FindAsync(id);
@@ -104,6 +109,11 @@ public class BookService : IBookService
 
     public async Task<bool> DeleteBookAsync(int id)
     {
+        if (id < 1)
+        {
+            throw new ArgumentException("Invalid argument: ID must be greater than 0.");
+        }
+
         try
         {
             var book = await _context.Books.FindAsync(id);
