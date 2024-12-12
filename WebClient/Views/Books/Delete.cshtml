@@ -1,0 +1,20 @@
+﻿@model BaseLibrary.Entities.Book
+
+<h2 class="text-center text-danger">Delete Book</h2>
+<div class="d-flex justify-content-center">
+    <div class="card w-50 border-danger">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">Author: @Model.Author</p>
+            <p class="card-text">Published Date: @Model.PublishedDate.ToShortDateString()</p>
+            <p class="card-text">Genre: @Model.Genre</p>
+        </div>
+        <div class="card-footer text-center">
+            <form asp-action="DeleteConfirmed" method="post" class="d-inline">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</div>
