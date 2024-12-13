@@ -105,82 +105,6 @@ public class BookTests : IDisposable
     }
 
     [Fact]
-    public async Task GetBooksInRangeAsync_ShouldReturnBooks_WhenRangeIsValid()
-    {
-        // Arrange
-        _context.Books.AddRange(
-            new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" },
-            new Book { Title = "Book 2", Author = "Author 2", PublishedDate = DateTime.Now, Genre = "Genre 2" },
-            new Book { Title = "Book 3", Author = "Author 3", PublishedDate = DateTime.Now, Genre = "Genre 3" }
-        );
-        await _context.SaveChangesAsync();
-        _context.ChangeTracker.Clear();
-
-        var service = new BookService(_context);
-
-        // Act
-        var books = await service.GetBooksInRangeAsync(1, 2);
-
-        // Assert
-        books.Should().HaveCount(2);
-        books.ElementAt(0).Title.Should().Be("Book 1");
-        books.ElementAt(1).Title.Should().Be("Book 2");
-    }
-
-    [Fact]
-    public async Task GetBooksInRangeAsync_ShouldThrowArgumentException_WhenRangeIsInvalid()
-    {
-        // Arrange
-        var service = new BookService(_context);
-
-        // Act
-        Func<Task> act = async () => await service.GetBooksInRangeAsync(3, 2);
-
-        // Assert
-        await act.Should().ThrowAsync<ArgumentException>()
-            .WithMessage("Invalid range specified.");
-    }
-
-    [Fact]
-    public async Task GetBooksInRangeAsync_ShouldReturnEmpty_WhenRangeExceedsTotalBooks()
-    {
-        // Arrange
-        _context.Books.AddRange(
-            new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" }
-        );
-        await _context.SaveChangesAsync();
-        _context.ChangeTracker.Clear();
-
-        var service = new BookService(_context);
-
-        // Act
-        var books = await service.GetBooksInRangeAsync(2, 3);
-
-        // Assert
-        books.Should().BeEmpty();
-    }
-
-    [Fact]
-    public async Task GetBooksInRangeAsync_ShouldReturnAllBooks_WhenRangeCoversEntireList()
-    {
-        // Arrange
-        _context.Books.AddRange(
-            new Book { Title = "Book 1", Author = "Author 1", PublishedDate = DateTime.Now, Genre = "Genre 1" },
-            new Book { Title = "Book 2", Author = "Author 2", PublishedDate = DateTime.Now, Genre = "Genre 2" }
-        );
-        await _context.SaveChangesAsync();
-        _context.ChangeTracker.Clear();
-
-        var service = new BookService(_context);
-
-        // Act
-        var books = await service.GetBooksInRangeAsync(1, 2);
-
-        // Assert
-        books.Should().HaveCount(2);
-    }
-
-    [Fact]
     public async Task GetBookByIdAsync_ShouldReturnCorrectBook_WhenBookExists()
     {
         // Arrange
@@ -249,25 +173,6 @@ public class BookTests : IDisposable
     }
 
     [Fact]
-    public async Task DeleteBook_ShouldRemoveBookFromDatabase()
-    {
-        // Arrange
-        var book = new Book { Title = "Book to Delete", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
-        _context.Books.Add(book);
-        await _context.SaveChangesAsync();
-
-        var service = new BookService(_context);
-
-        // Act
-        var result = await service.DeleteBookAsync(book.Id);
-        _context.ChangeTracker.Clear();
-
-        // Assert
-        result.Should().BeTrue();
-        _context.Books.Count().Should().Be(0);
-    }
-
-    [Fact]
     public void Book_Title_ShouldNotExceedMaxLength()
     {
         // Arrange
@@ -314,6 +219,52 @@ public class BookTests : IDisposable
     }
 
     [Fact]
+    public void Book_Author_ShouldNotExceedMaxLength()
+    {
+        // Arrange
+        var book = new Book
+        {
+            Title = "Title", 
+            Author = new string('A', 101), // Exceeds max length of 100
+            PublishedDate = DateTime.Now,
+            Genre = "Fiction"
+        };
+
+        // Act
+        Action act = () =>
+        {
+            _context.Books.Add(book);
+            _context.SaveChanges();
+        };
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        act.Should().Throw<DbUpdateException>();
+    }
+
+    [Fact]
+    public async Task Book_Author_ShouldNotBeEmptyOrWhitespace()
+    {
+        // Arrange
+        var book = new Book
+        {
+            Title = "Title", 
+            Author = " ", // Invalid: Whitespace only
+            PublishedDate = DateTime.Now,
+            Genre = "Fiction"
+        };
+
+        var service = new BookService(_context);
+
+        // Act
+        Func<Task> act = async () => await service.CreateBookAsync(book);
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        await act.Should().ThrowAsync<ValidationException>();
+    }
+
+    [Fact]
     public void Book_Author_ShouldBeRequired()
     {
         // Arrange
@@ -323,6 +274,52 @@ public class BookTests : IDisposable
             Author = null, // Author is required
             PublishedDate = DateTime.Now,
             Genre = "Fiction"
+        };
+
+        // Act
+        Action act = () =>
+        {
+            _context.Books.Add(book);
+            _context.SaveChanges(); // This triggers the database update and validation
+        };
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        act.Should().Throw<DbUpdateException>();
+    }
+
+    [Fact]
+    public async Task Book_Genre_ShouldNotBeEmptyOrWhitespace()
+    {
+        // Arrange
+        var book = new Book
+        {
+            Title = "Title",
+            Author = "Author", // Invalid: Whitespace only
+            PublishedDate = DateTime.Now,
+            Genre = " "
+        };
+
+        var service = new BookService(_context);
+
+        // Act
+        Func<Task> act = async () => await service.CreateBookAsync(book);
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        await act.Should().ThrowAsync<ValidationException>();
+    }
+
+    [Fact]
+    public void Book_Genre_ShouldBeRequired()
+    {
+        // Arrange
+        var book = new Book
+        {
+            Title = "Valid Title",
+            Author = "Author", // Author is required
+            PublishedDate = DateTime.Now,
+            Genre = null
         };
 
         // Act
@@ -427,7 +424,6 @@ public class BookTests : IDisposable
         createdBook.PublishedDate.Should().Be(book.PublishedDate);
     }
 
-    //
     [Fact]
     public async Task UpdateBook_ShouldReturnNull_WhenBookDoesNotExist()
     {
@@ -493,5 +489,24 @@ public class BookTests : IDisposable
         // Assert
         await act.Should().ThrowAsync<ArgumentException>()
             .WithMessage("Invalid argument: ID must be greater than 0.");
+    }
+
+    [Fact]
+    public async Task DeleteBook_ShouldRemoveBookFromDatabase()
+    {
+        // Arrange
+        var book = new Book { Title = "Book to Delete", Author = "Author", PublishedDate = DateTime.Now, Genre = "Genre" };
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+
+        var service = new BookService(_context);
+
+        // Act
+        var result = await service.DeleteBookAsync(book.Id);
+        _context.ChangeTracker.Clear();
+
+        // Assert
+        result.Should().BeTrue();
+        _context.Books.Count().Should().Be(0);
     }
 }

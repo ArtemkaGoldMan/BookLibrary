@@ -22,20 +22,6 @@ public class BooksController : ControllerBase
         return Ok(books);
     }
 
-    [HttpGet("range")]
-    public async Task<ActionResult<IEnumerable<Book>>> GetBooksInRange(int i, int j)
-    {
-        try
-        {
-            var books = await _bookService.GetBooksInRangeAsync(i, j);
-            return Ok(books);
-        }
-        catch (ArgumentException e)
-        {
-            return BadRequest(e.Message);
-        }
-    }
-
     [HttpGet("{id}")]
     public async Task<ActionResult<Book>> GetBookById(int id)
     {

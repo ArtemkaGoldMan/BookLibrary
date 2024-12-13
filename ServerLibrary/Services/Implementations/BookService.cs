@@ -28,21 +28,6 @@ public class BookService : IBookService
         }
     }
 
-    public async Task<IEnumerable<Book>> GetBooksInRangeAsync(int i, int j)
-    {
-        try
-        {
-            if (i <= 0 || j < i) throw new ArgumentException("Invalid range specified.");
-
-            return await _context.Books.Skip(i - 1).Take(j - i + 1).ToListAsync();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error in {nameof(GetBooksInRangeAsync)}: {ex.Message}");
-            throw;
-        }
-    }
-
     public async Task<Book?> GetBookByIdAsync(int id)
     {
         if (id < 1)
